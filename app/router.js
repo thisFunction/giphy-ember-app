@@ -8,8 +8,8 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route("index", {path: "/"}, function() {
-    this.route('gifs');
-  });
+    this.route("gifs");
+  })
 });
 
 export default Router;

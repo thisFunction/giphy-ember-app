@@ -1,8 +1,7 @@
-<p>Gifs route</p>
+<section class="giffy-search-results">
+    {{#each this.model as |gif|}}
+        {{gif-link gif=gif}}
+    {{/each}}
+</section>
 
-{{#each this.model as |rental|}}
-<article class="listing">
-
-</article>
-{{/each}}
 {{outlet}}

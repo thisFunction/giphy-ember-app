@@ -1,7 +1,8 @@
-<h1>Welcome to the giphy search app</h1>
-<p>Enter search term below and enjoy</p>
-
-{{input value=this.searchQuery type="text"}}
-<button {{action "searchGifs"}}></button>
+<section class="giphy-search-section">
+    <h1>Welcome to MyGiphy</h1>
+    <p>Enter search term</p>
+    {{input value=this.searchQuery type="text" autofocus="true" insert-newline='searchGifs'}}
+    <button {{action "searchGifs"}}>SEARCH</button>
+</section>
 
 {{outlet}}

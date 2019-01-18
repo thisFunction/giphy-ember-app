@@ -1,0 +1,16 @@
+.gify-minature {
+  border: 1px solid #e85a4f;
+  padding: 2em;
+  border-radius: 1em;
+  margin: 1em;
+  display: flex;
+  align-content: space-around;
+  align-items: center;
+  img {
+      max-height: 100px;
+      max-width: 100px;
+  }
+  p {
+    margin-right: 10%;
+  }
+}

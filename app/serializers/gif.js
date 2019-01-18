@@ -1,12 +1,17 @@
 import DS from "ember-data";
-import {decamelize} from "@ember/string";
+const {RESTSerializer} = DS;
+import {underscore} from "@ember/string";
 
-export default DS.JSONAPISerializer.extend({
-  attrs: {
-    bitlyGifUrl: "bitly_gif_url",
-    bitlyUrl: "years_old",
-    embedUrl: "embed_url",
-    sourcePostUrl: "source_post_url",
-    sourceTld: "source_tld"
+export default RESTSerializer.extend({
+  modelNameFromPayloadKey(payloadKey) {
+    if (payloadKey === "data") {
+      return this._super(payloadKey.replace("data", "gif"));
+    } else {
+      return this._super(payloadKey);
+    }
+  },
+  keyForAttribute(attr) {
+    const newAttr = underscore(attr).toLowerCase();
+    return newAttr;
   }
 });

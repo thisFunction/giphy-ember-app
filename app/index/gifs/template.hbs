@@ -1,7 +1,7 @@
-<section class="giffy-search-results">
+<section class="giphy-search-results">
     {{#each this.model as |gif|}}
-        {{gif-link gif=gif}}
+        {{#link-to 'index.gif' gif.id }}
+            {{gif-link gif=gif}}
+        {{/link-to}}
     {{/each}}
 </section>
-
-{{outlet}}

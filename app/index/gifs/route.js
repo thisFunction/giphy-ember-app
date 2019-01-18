@@ -7,11 +7,10 @@ export default Route.extend({
     }
   },
   model(params) {
-    return this.store.query("gif", params.search);
-  },
-  actions:{
-    clickGif() {
-      debugger
+    if (params.search === null) {
+      return this.store.query("gif", "funny");
+    } else {
+      return this.store.query("gif", params.search);
     }
   }
 });

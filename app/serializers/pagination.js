@@ -2,9 +2,10 @@ import DS from "ember-data";
 import {underscore} from "@ember/string";
 
 export default DS.RESTSerializer.extend({
-  extractId(typeClass, hash) {
-    let payload = {...hash, id: new Date().getTime()};
-    return payload;
+  normalize(typeHash, hash) {
+    let payload = {...hash}
+    payload.id = payload.offset;
+    return this._super(typeHash, payload);
   },
   keyForAttribute(attr) {
     const newAttr = underscore(attr).toLowerCase();

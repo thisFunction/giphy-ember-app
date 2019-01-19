@@ -1,12 +1,8 @@
-import DS from "ember-data";
+import ApplicationAdapter from "./application";
 
-export default DS.RESTAdapter.extend({
-  api_key: "CJJlnuT0vAt2j733vIkxgYGJbLN0OrZf",
-  host: "http://api.giphy.com",
+export default ApplicationAdapter.extend({
   namespace: "v1/gifs",
-  urlForQuery(query) {
-    return `${this.host}/${this.namespace}/search?api_key=${
-          this.api_key
-        }&q=${query}`;
+  urlForQuery() {
+    return `${this.host}/${this.namespace}/search?api_key=${this.api_key}`;
   }
 });

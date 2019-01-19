@@ -1,14 +1,11 @@
 <section class="giphy">
     <div>
-<span></span>
         <p><span class="giphy-meta">title: </span>{{gif.titleNoEnding}}</p>
         <p><span class="giphy-meta">rating: </span>{{gif.rating}}</p>
         <p><span class="giphy-meta">url: </span><a href={{gif.url}}>giphy link</a></p>
-
     </div>
     <div>
-    <img src={{gif.images.fixed_height.url}} alt="">
-
+        <img src={{gif.images.fixed_height.url}} alt="">
     </div>
 </section>
 {{outlet}}

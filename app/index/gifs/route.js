@@ -2,15 +2,18 @@ import Route from "@ember/routing/route";
 
 export default Route.extend({
   queryParams: {
-    search: {
+    q: {
+      refreshModel: true
+    },
+    offset: {
       refreshModel: true
     }
   },
   model(params) {
     if (params.search === null) {
-      return this.store.query("gif", "funny");
+      return this.store.query("gif", {offset: 0, q: "funny"});
     } else {
-      return this.store.query("gif", params.search);
+      return this.store.query("gif", params);
     }
   }
 });

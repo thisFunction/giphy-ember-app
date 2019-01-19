@@ -5,7 +5,6 @@ export default Route.extend({
         return this.store.queryRecord("gif-detail", {id: params.id} );
       },
       setupController(controller, model){
-
         controller.set('gif', model);
       }
 });

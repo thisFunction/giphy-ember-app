@@ -1,5 +1,5 @@
 import Controller from "@ember/controller";
-import { computed } from "@ember/object"
+import { computed, get } from "@ember/object"
 import { inject } from '@ember/service';
 
 export default Controller.extend({
@@ -7,7 +7,8 @@ export default Controller.extend({
 
   q: null,  
   offset: null,
-  pagination: computed('pagination', function() {
-    return this.get('store').peekRecord('pagination', 0)
+  pagination: computed('store.offset','model.query.offset', function() {
+    let offset = get(this, 'model.query.offset');
+    return this.get('store').peekRecord('pagination', offset)
   })
 });

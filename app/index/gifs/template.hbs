@@ -1,9 +1,13 @@
+
+{{#if currentlyLoading}}
+{{loading-component}}
+{{else}}
 <section class="giphy-search-results">
     {{#each model as |gif|}}
         {{#link-to 'index.gif' gif.id }}
             {{gif-link gif=gif}}
         {{/link-to}}
     {{/each}}
-
-    {{pagination-section pagination=pagination}}
-</section> 
+</section>
+{{pagination-section pagination=pagination}}
+{{/if}}

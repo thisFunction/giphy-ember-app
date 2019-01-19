@@ -15,6 +15,9 @@ export default Controller.extend({
           offset: 0
         }
       });
+    },
+    favorites() {
+      this.transitionToRoute("index.favorites");
     }
   }
 });

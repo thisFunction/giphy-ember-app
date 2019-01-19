@@ -10,6 +10,7 @@ Router.map(function() {
   this.route("index", {path: "/"}, function() {
     this.route("gifs", function() {});
     this.route('gif', {path: "/gif/:id"});
+    this.route('favorites');
   })
 });
 

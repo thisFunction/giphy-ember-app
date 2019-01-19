@@ -15,5 +15,15 @@ export default Route.extend({
     } else {
       return this.store.query("gif", params);
     }
+  },
+  actions: {
+    loading(transition) {
+      let controller = this.controllerFor("index.gifs");
+       
+      controller.set("currentlyLoading", true);
+      transition.promise.finally(function() {
+        controller.set("currentlyLoading", false);
+      });
+    }
   }
 });

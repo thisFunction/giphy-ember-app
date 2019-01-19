@@ -19,3 +19,27 @@ span {
   text-decoration: none;
   font-family: "Josefin Sans", sans-serif;
 }
+
+button {
+  cursor: pointer;
+  margin-top: 1em;
+  font-size: 0.6em;
+  padding: 1em;
+  background-color: #e85a4f;
+  color: #eae7dc;
+
+  border: 3px solid;
+  border-radius: 2em;
+
+  &:hover {
+    background-color: #eae7dc;
+    color: #e85a4f;
+    transition: background-color 100ms linear, color 100ms linear;
+  }
+
+  &:disabled {
+    color: #eae7dc;
+    background: gray;
+    cursor: default;
+  }
+}

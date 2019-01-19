@@ -5,38 +5,53 @@ import {computed, get} from "@ember/object";
 export default Component.extend({
   router: service(),
   itemsPerPage: 25,
-  previousButtonDisabled: computed("router.currentRoute.queryParams.offset", "itemsPerPage", function(){
-    let offset = Number(get(this, "router.currentRoute.queryParams.offset"));
-    let itemsPerPage = get(this, "itemsPerPage");
-    return !(offset - itemsPerPage >= 0)
-}),
+  totalItemCount: computed("pagination.totalCount", function() {
+    return get(this, "pagination.totalCount");
+  }),
+  searchParams: computed("router.currentRoute.queryParams.q", function() {
+    return get(this, "router.currentRoute.queryParams.q");
+  }),
+  previousButtonDisabled: computed(
+    "router.currentRoute.queryParams.offset",
+    "itemsPerPage",
+    function() {
+      let offset = Number(get(this, "router.currentRoute.queryParams.offset"));
+      let itemsPerPage = get(this, "itemsPerPage");
+      return !(offset - itemsPerPage >= 0);
+    }
+  ),
+  nextButtonDisabled: computed(
+    "router.currentRoute.queryParams.offset",
+    "itemsPerPage",
+    "pagination.totalCount",
+    function() {
+      let offset = Number(get(this, "router.currentRoute.queryParams.offset"));
+      let itemsPerPage = get(this, "itemsPerPage");
+      let totalItemCount = Number(get(this, "pagination.totalCount"));
+      return offset + itemsPerPage > totalItemCount;
+    }
+  ),
+  transitionToPage(offset) {
+    let searchParams = get(this, "searchParams");
+    this.get("router").transitionTo("index.gifs", {
+      queryParams: {
+        q: `${searchParams}`,
+        offset: offset
+      }
+    });
+  },
   actions: {
     next() {
-
-      let searchParams = get(this, "router.currentRoute.queryParams.q");
-      let offset = Number(get(this, "router.currentRoute.queryParams.offset"));
-      let itemsPerPage = get(this, "itemsPerPage");
-
-      this.get("router").transitionTo("index.gifs", {
-        queryParams: {
-          q: `${searchParams}`,
-          offset: offset + itemsPerPage
-        }
-      });
+      let nextPageOffset =
+        Number(get(this, "router.currentRoute.queryParams.offset")) +
+        get(this, "itemsPerPage");
+      this.transitionToPage(nextPageOffset);
     },
     previous() {
-      let searchParams = get(this, "router.currentRoute.queryParams.q");
       let offset = Number(get(this, "router.currentRoute.queryParams.offset"));
       let itemsPerPage = get(this, "itemsPerPage");
-      
-      let prevPage = offset - itemsPerPage >= 0 ? offset - itemsPerPage : 0;
-
-      this.get("router").transitionTo("index.gifs", {
-        queryParams: {
-          q: `${searchParams}`,
-          offset: prevPage
-        }
-      });
+      let previousPageOffset = offset - itemsPerPage;
+      this.transitionToPage(previousPageOffset);
     }
   }
 });

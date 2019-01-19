@@ -1,11 +1,12 @@
-<section class="giphy">
-    <div>
-        <p><span class="giphy-meta">title: </span>{{gif.titleNoEnding}}</p>
-        <p><span class="giphy-meta">rating: </span>{{gif.rating}}</p>
-        <p><span class="giphy-meta">url: </span><a href={{gif.url}}>giphy link</a></p>
+<section class="giphy-details">
+    <div class="giphy-details-content">
+        <p><span class="giphy-meta">title: </span>{{model.gif.titleNoEnding}}</p>
+        <p><span class="giphy-meta">url: </span><a href={{model.gif.url}}>giphy link</a></p>
+        <span class="giphy-meta">Rating: </span>
+        {{star-rating fullClassNames="fa fa-star"
+        emptyClassNames="fa fa-star-o" item=model.gif rating=userRating on-click=(action "clickStar")}}
     </div>
     <div>
-        <img src={{gif.images.fixed_height.url}} alt="">
+        <img src={{model.gif.imageUrl}} alt="">
     </div>
 </section>
-{{outlet}}

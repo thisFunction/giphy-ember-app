@@ -1,17 +1,27 @@
-.giphy {
+.giphy-details {
   margin: 1em 0 3em;
+  padding: 1em;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+
+  .giphy-details-content {
+    padding-right: 1em;
+  }
   .giphy-meta {
     font-family: "Amatic SC", cursive;
     font-weight: bold;
+    width: 90px;
+    display: inline-block;
   }
   p {
     margin: 0;
   }
   img {
     margin: 0 auto;
+  }
+  .rating-panel {
+    display: inline;
   }
 }

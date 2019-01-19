@@ -1,0 +1,45 @@
+.giphy-list {
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.sort {
+    display: block;
+}
+
+.giphy-minature {
+  display: flex;
+  color: #e85a4f;
+  border: 1px solid;
+  padding: 0.2em;
+  border-radius: 0.1em;
+  align-content: space-around;
+  align-items: center;
+  height: 120px;
+  width: 120px;
+  margin: 0.2em;
+  img {
+    max-height: 100px;
+    max-width: 100px;
+    margin: 0 auto;
+  }
+}
+
+.giphy-minature-rating {
+  @extend .giphy-minature;
+  position: relative;
+
+  .rating-panel {
+    text-align: center;
+    position: absolute;
+    bottom: .2em;
+    font-size: 0.4em;
+    width: 100%;
+    left: 0;
+  }
+}

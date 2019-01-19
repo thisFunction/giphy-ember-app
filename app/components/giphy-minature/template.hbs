@@ -1,0 +1,20 @@
+<section class="giphy-list">
+    <button class="sort" {{action "sortFavoritesAscending"}}>sort favorites {{fa-icon "sort-amount-asc"}}</button>
+    <button class="sort" {{action "sortFavoritesAscending"}}>unsort favorites {{fa-icon "unsorted"}}</button>
+    <button class="sort" {{action "sortFavoritesDescending"}}>sort favorites {{fa-icon "sort-amount-desc"}}</button>
+
+</section>
+<section class="giphy-list">
+    {{#if includeRating}}
+
+    {{/if}}
+    {{#each modelArray as |gif|}}
+    {{#link-to 'index.gif' gif.id class=(if includeRating 'giphy-minature-rating' 'giphy-minature')}}
+    <img src={{gif.imageUrl}} alt="">
+    {{#if includeRating}}
+    {{star-rating fullClassNames="fa fa-star"
+    emptyClassNames="fa fa-star-o" item=gif rating=gif.userRating on-click=(action "emptyClick")}}
+    {{/if}}
+    {{/link-to}}
+    {{/each}}
+</section>

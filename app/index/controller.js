@@ -8,7 +8,7 @@ export default Controller.extend({
   }),
   actions: {
     searchGiphy() {
-      let searchQuery = get(this, 'searchQuery');
+      const searchQuery = get(this, 'searchQuery');
       this.transitionToRoute("index.gifs", {
         queryParams: {
           q: `${searchQuery}`,

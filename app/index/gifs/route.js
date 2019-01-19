@@ -18,8 +18,7 @@ export default Route.extend({
   },
   actions: {
     loading(transition) {
-      let controller = this.controllerFor("index.gifs");
-       
+      const controller = this.controllerFor("index.gifs");
       controller.set("currentlyLoading", true);
       transition.promise.finally(function() {
         controller.set("currentlyLoading", false);

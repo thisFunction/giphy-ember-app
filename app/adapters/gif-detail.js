@@ -4,9 +4,9 @@ import $ from "jquery";
 
 export default ApplicationAdapter.extend({
   queryRecord(store, type, query) {
-    let host = this.host;
-    let namespace = this.namespace;
-    let api_key = this.api_key;
+    const host = this.host;
+    const namespace = this.namespace;
+    const api_key = this.api_key;
     return new Promise(function(resolve, reject) {
       $.getJSON(
         `${host}/${namespace}/${query.id}?api_key=${api_key}`

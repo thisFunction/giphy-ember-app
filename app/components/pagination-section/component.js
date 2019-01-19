@@ -5,6 +5,9 @@ import {computed, get} from "@ember/object";
 export default Component.extend({
   router: service(),
   itemsPerPage: 25,
+  offset: computed("router.currentRoute.queryParams.offset", function(){
+      return Number(get(this, "router.currentRoute.queryParams.offset"));
+  }),
   totalItemCount: computed("pagination.totalCount", function() {
     return get(this, "pagination.totalCount");
   }),
@@ -15,7 +18,7 @@ export default Component.extend({
     "router.currentRoute.queryParams.offset",
     "itemsPerPage",
     function() {
-      let offset = Number(get(this, "router.currentRoute.queryParams.offset"));
+      let offset = get(this, "offset");
       let itemsPerPage = get(this, "itemsPerPage");
       return !(offset - itemsPerPage >= 0);
     }
@@ -25,8 +28,8 @@ export default Component.extend({
     "itemsPerPage",
     "pagination.totalCount",
     function() {
-      let offset = Number(get(this, "router.currentRoute.queryParams.offset"));
-      let itemsPerPage = get(this, "itemsPerPage");
+        let offset = get(this, "offset");
+        let itemsPerPage = get(this, "itemsPerPage");
       let totalItemCount = Number(get(this, "pagination.totalCount"));
       return offset + itemsPerPage > totalItemCount;
     }

@@ -2,12 +2,6 @@
 {{#if currentlyLoading}}
 {{loading-component}}
 {{else}}
-<section class="giphy-search-results">
-    {{#each model as |gif|}}
-        {{#link-to 'index.gif' gif.id }}
-            {{gif-link gif=gif}}
-        {{/link-to}}
-    {{/each}}
-</section>
+{{giphy-minature model=model}}
 {{pagination-section pagination=pagination}}
 {{/if}}

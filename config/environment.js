@@ -6,6 +6,17 @@ module.exports = function(environment) {
     environment,
     rootURL: "/",
     locationType: "auto",
+    firebase: {
+      apiKey: "AIzaSyD-FUlMHuyMBWEW2TyZKpAH5yho3Rqf5BI",
+      authDomain: "giphy-ember-app.firebaseapp.com",
+      databaseURL: 'https://giphy-ember-app.firebaseio.com',
+      storageBucket: 'giphy-ember-app.appspot.com',
+    },
+    contentSecurityPolicy: {
+      'script-src': "'self' 'unsafe-eval' apis.google.com",
+      'frame-src': "'self' https://*.firebaseapp.com",
+      'connect-src': "'self' wss://*.firebaseio.com https://*.googleapis.com"
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

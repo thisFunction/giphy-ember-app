@@ -8,7 +8,7 @@ export default Controller.extend({
   q: null,  
   offset: null,
   pagination: computed('store.offset','model.query.offset', function() {
-    let offset = get(this, 'model.query.offset');
+    const offset = get(this, 'model.query.offset');
     return this.get('store').peekRecord('pagination', offset)
   })
 });

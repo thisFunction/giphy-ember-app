@@ -5,8 +5,9 @@
             <span>{{model.gif.titleNoEnding}}</span>
         </div>
         <div class="detail-section">
-            <span class="giphy-meta">user: </span>
-            <span>{{model.gif.username}}</span></div>
+            <span class="giphy-meta">date: </span>
+            
+            <span>{{moment-format model.gif.importDatetime 'MMMM DD, YYYY'}}</span></div>
         <div class="detail-section">
             <span class="giphy-meta">url: </span>
             <span><a href={{model.gif.url}}>original post</a></span>

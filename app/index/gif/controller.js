@@ -2,10 +2,6 @@ import Controller from "@ember/controller";
 import {get, computed} from "@ember/object";
 
 export default Controller.extend({
-  didReceiveAttrs() {
-    this._super(...arguments);
-  debugger
-  },
   currentGiphyId: computed("model.gif.id", function() {
     return get(this, "model.gif.id");
   }),
@@ -14,9 +10,9 @@ export default Controller.extend({
     "currentGiphyId",
     function() {
       const giphyId = get(this, "currentGiphyId");
-      debugger
-      const favorites = this.store.peekRecord("favorite", giphyId);
-      return favorites;
+      return get(this, "model.favorites")
+        .toArray()
+        .filter(item => item.giphyId === giphyId);
     }
   ),
   userRating: computed(
@@ -24,8 +20,9 @@ export default Controller.extend({
     "currentGiphyId",
     function() {
       const giphyId = get(this, "currentGiphyId");
-      const favorites = this.store.peekRecord("favorite", giphyId);
-      return favorites ? favorites.userRating : 0;
+      const model = this.get("model.favorites").toArray();
+      const favoriteItem = model.filter(item => item.giphyId == giphyId);
+      return favoriteItem.length ? favoriteItem[0].userRating : 0;
     }
   ),
   actions: {
@@ -33,8 +30,9 @@ export default Controller.extend({
       const userRating = rating.rating;
       const giphyId = get(this, "currentGiphyId");
       const favorites = get(this, "giphyIsFavorite");
-      if (favorites) {
-        this.store.findRecord("favorite", giphyId).then(function(record) {
+      if (favorites.length) {
+
+        this.store.findRecord("favorite", favorites[0].id).then(function(record) {
           record.set("userRating", userRating);
           record.save();
         });
@@ -44,7 +42,7 @@ export default Controller.extend({
 
         const newFavorite = this.store.createRecord("favorite", {
           userRating: userRating,
-          id: giphyId,
+          giphyId: giphyId,
           giphyUrl: giphyUrl,
           imageUrl: imageUrl
         });
@@ -52,13 +50,13 @@ export default Controller.extend({
       }
     },
     removeFromFavorites() {
-      const giphyId = get(this, "currentGiphyId");
-      this.store
-        .findRecord("favorite", giphyId, {backgroundReload: false})
-        .then(function(record) {
-          record.deleteRecord();
-          record.save();
-        });
+      const favoritesRecordId = get(this, "giphyIsFavorite.0.id");
+      
+      this.store.findRecord("favorite", favoritesRecordId).then(function(record) {
+        record.destroyRecord();
+        record.save();
+      });
+      this.store.unloadAll("favorites");
     }
   }
 });

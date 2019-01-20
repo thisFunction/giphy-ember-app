@@ -1,16 +1,12 @@
 .pagination {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    max-width: 450px;
-
-    button {
-        width: 160px;
-
-        .fa {
-            position: relative;
-            top: 1px;
-        }
+  button {
+    width: 140px;
+    &:first-of-type {
+      margin-right: 2em;
     }
+    .fa {
+      position: relative;
+      top: 1px;
+    }
+  }
 }

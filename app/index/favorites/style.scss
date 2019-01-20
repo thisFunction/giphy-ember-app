@@ -9,6 +9,10 @@ h1 {
   flex-direction: column;
   flex-flow: row wrap;
   justify-content: center;
+
+  @media (max-width: 600px) {
+    padding: 1em .1em;
+  }
 }
 
 .sort {

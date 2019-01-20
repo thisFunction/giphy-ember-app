@@ -1,20 +1,27 @@
 <section class="giphy-details">
     <div class="giphy-details-content">
-        <p class="giphy-meta">title: </p>
-        <p>{{model.gif.titleNoEnding}}</p>
-        <br>
-        <p class="giphy-meta">url: </p>
-        <p><a href={{model.gif.url}}>giphy link</a></p>
-        <br>
-        <p>add to favorites by rating giphy</p>
-        <p>        <span class="giphy-meta">rating: </span>
-        {{star-rating fullClassNames="fa fa-star"
-        emptyClassNames="fa fa-star-o" item=model.gif rating=userRating on-click=(action "clickStar")}} </p>
-
-        <br>
-        <button class={{if isFavorite 'show-button' 'hide-button' }} {{action "removeFromFavorites"}}>remove from favorites</button>
+        <div class="detail-section">
+            <span class="giphy-meta">title: </span>
+            <span>{{model.gif.titleNoEnding}}</span>
+        </div>
+        <div class="detail-section">
+            <span class="giphy-meta">user: </span>
+            <span>{{model.gif.username}}</span></div>
+        <div class="detail-section">
+            <span class="giphy-meta">url: </span>
+            <span><a href={{model.gif.url}}>original post</a></span>
+        </div>
+        <div class="detail-section"><span class="giphy-meta">my rating: </span>
+            {{star-rating fullClassNames="fa fa-star"
+            emptyClassNames="fa fa-star-o" item=model.gif rating=userRating on-click=(action "clickStar")}} </div>
+        <div class="detail-section-button">
+              <button class='small 
+                {{ if isFavorite 'show-button' 'hide-button'}}'
+                {{action "removeFromFavorites"}}
+                >remove from favorites</button>
+        </div>
     </div>
-    <div>
+    <div class="giphy-detail-image">
         <img src={{model.gif.imageUrl}} alt="">
     </div>
 </section>

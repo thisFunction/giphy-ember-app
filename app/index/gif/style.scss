@@ -1,6 +1,6 @@
 .giphy-details {
   border: 1px solid;
-  border-radius: .4em;
+  border-radius: 0.4em;
   max-width: 900px;
   margin: 1em auto;
   padding: 1em;
@@ -8,24 +8,51 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-
-  @media (max-width: 650px) {
+  @media (max-width: 670px) {
     flex-direction: column;
+    padding: 0.5em;
   }
-
   .giphy-details-content {
+    width: 50%;
     padding-right: 1em;
-    line-height: 1.2em;
-    p {
-      font-size: 0.7em
+    @media (max-width: 670px) {
+      order: 2;
+      padding-right: 0;
+      width: 80%;
     }
-    
+    .detail-section {
+      margin: 0;
+      font-size: 0.8em;
+      padding: 0.4em 0;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border-bottom: 1px dashed;
+      &:last-of-type {
+        border-bottom: none;
+      }
+      @media (max-width: 670px) {
+        padding: 0.6em 0;
+        font-size: 60%;
+      }
+      span:not(.giphy-meta) {
+        font-size: 0.8em;
+      }
+      a {
+        color: #17a5b0;
+        &:hover {
+          color: #e85a4f;
+        }
+      }
+    }
     .rating-panel {
+      width: 180px;
       color: #e8b64f;
-      display: inline;
-
-
-      span {
+      justify-content: space-between;
+      @media (max-width: 670px) {
+        font-size: 1.3em;
+      }
+      .rating-star {
         cursor: pointer;
       }
     }
@@ -36,16 +63,39 @@
       visibility: hidden;
     }
   }
-  .giphy-meta {
-    font-weight: bold;
-    width: 90px;
-    display: inline-block;
+  .giphy-detail-image {
+    text-align: center;
+    max-width: 50%;
+    @media (max-width: 670px) {
+      width: 100%;
+    }
+    @media (min-width: 671px) {
+      max-height: 200px;
+      max-width: 100%;
+    }
   }
-  p {
-    margin: 0;
+  .giphy-meta {
+    min-width: 160px;
+    display: inline-block;
+    font-family: "Amatic SC", cursive;
+    font-weight: 700;
+    font-size: 1.6em;
   }
   img {
     margin: 0 auto;
     max-height: 200px;
+    max-width: 100%;
+
+    @media (max-width: 670px) {
+      order: 1;
+      margin-top: 0.8em;
+    }
+  }
+  .detail-section-button {
+    padding: 0.6em 0;
+    .small {
+      display: block;
+      margin: 0 auto;
+    }
   }
 }

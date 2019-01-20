@@ -11,7 +11,11 @@ export default DS.Model.extend({
     const title = this.get("title");
     return title.slice(0, title.length - 4);
   }),
+  user: DS.attr(),
   imageUrl: computed('images', function(){
     return get(this, 'images.original.url');
+  }),
+  username: computed('user', function(){
+    return get(this, 'user.display_name');
   }) 
 });

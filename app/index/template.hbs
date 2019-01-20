@@ -1,9 +1,8 @@
 <section class="giphy-search-section">
     <h1>Welcome to MyGiphy</h1>
-    <p>enter search term or look at favorites</p>
     <form submit="searchGiphy">
         {{input value=this.searchQuery autocomplete="off" type="text" autofocus="true"}}
-        <button {{action "searchGiphy"}} disabled={{submitDisabled}}>SEARCH</button>
+        <button class="search-button" {{action "searchGiphy"}} disabled={{submitDisabled}}>SEARCH</button>
           <button {{action "favorites"}}>favorites</button>
     </form>
 </section>

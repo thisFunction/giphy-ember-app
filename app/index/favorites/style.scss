@@ -10,13 +10,9 @@ h1 {
   flex-flow: row wrap;
   justify-content: center;
 
-  @media (max-width: 600px) {
+  @media (max-width: 670px) {
     padding: 1em 0.1em;
   }
-}
-
-.sort {
-  display: block;
 }
 
 .giphy-minature {

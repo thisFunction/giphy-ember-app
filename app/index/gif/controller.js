@@ -34,7 +34,6 @@ export default Controller.extend({
       const giphyId = get(this, "currentGiphyId");
       const favorites = get(this, "giphyIsFavorite");
       if (favorites.length) {
-
         this.store.findRecord("favorite", favorites[0].id).then(function(record) {
           record.set("userRating", userRating);
           record.save();
@@ -42,7 +41,6 @@ export default Controller.extend({
       } else {
         const giphyUrl = get(this, "model.gif.url");
         const imageUrl = get(this, "model.gif.images.fixed_height.url");
-
         const newFavorite = this.store.createRecord("favorite", {
           userRating: userRating,
           giphyId: giphyId,
@@ -53,9 +51,7 @@ export default Controller.extend({
       }
     },
     removeFromFavorites() {
-      debugger
       const favoritesRecordId = get(this, "giphyIsFavorite.0.id");
-      
       this.store.findRecord("favorite", favoritesRecordId).then(function(record) {
         record.destroyRecord();
         record.save();

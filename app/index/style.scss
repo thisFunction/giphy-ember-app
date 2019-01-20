@@ -13,7 +13,7 @@
     text-transform: uppercase;
     padding: 0 0.5em;
     color: #e85a4f;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Amatic SC', cursive;
     display: block;
     margin: 0 auto 0.3em;
     background-color: #eae7dc;
@@ -26,6 +26,15 @@
 
 .list-header {
   margin-bottom: 0;
-  font-size: 1.4em;
+  font-size: 1.8em;
   text-align: center;
+}
+
+.search-button { 
+  background: #17a5b0;
+
+  &:not(:disabled):hover {
+    background-color: #eae7dc;
+    color: #17a5b0;
+  }
 }

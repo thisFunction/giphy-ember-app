@@ -12,6 +12,6 @@ export default DS.Model.extend({
     return title.slice(0, title.length - 4);
   }),
   imageUrl: computed('images', function(){
-    return get(this, 'images.preview_gif.url');
+    return get(this, 'images.original.url');
   }) 
 });

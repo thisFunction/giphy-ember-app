@@ -3,23 +3,29 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-
-  p {
-    margin-bottom: 0.2em;
-  }
+  padding-bottom: 2em;
 
   h1 {
     margin: 0.2em 0.2em 0;
   }
 
   input {
-    padding: 0 0.3em;
+    text-transform: uppercase;
+    padding: 0 0.5em;
     color: #e85a4f;
-    font-family: "Amatic SC", cursive;
+    font-family: 'Roboto', sans-serif;
+    display: block;
+    margin: 0 auto;
     background-color: #eae7dc;
     border: 3px solid;
     border-radius: 2em;
     font-size: 2em;
     width: 80%;
   }
+}
+
+.list-header {
+  margin-bottom: 0;
+  font-size: 1.4em;
+  text-align: center;
 }

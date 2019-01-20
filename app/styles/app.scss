@@ -7,17 +7,21 @@ body {
   font-size: 1.4em;
 }
 
-h1 {
-  font-family: "Amatic SC", cursive;
+h1,
+h2 {
+  font-family: "Roboto", sans-serif;
   font-size: 2em;
 }
 
+h2 {
+  font-size: 1.6em;
+}
 p,
 a,
 span {
   font-size: 1.2em;
   text-decoration: none;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Lora", serif;
 }
 
 button {

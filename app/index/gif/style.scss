@@ -1,16 +1,31 @@
 .giphy-details {
-  margin: 1em 0 3em;
+  max-width: 900px;
+  margin: 1em auto;
   padding: 1em;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
 
+  @media (max-width: 650px) {
+    flex-direction: column;
+  }
+
   .giphy-details-content {
     padding-right: 1em;
+    font-size: 0.7em;
+    line-height: 1.2em;
+
+    .rating-panel {
+      color: #e8b64f;
+      display: inline;
+
+      span {
+        cursor: pointer;
+      }
+    }
   }
   .giphy-meta {
-    font-family: "Amatic SC", cursive;
     font-weight: bold;
     width: 90px;
     display: inline-block;
@@ -20,8 +35,6 @@
   }
   img {
     margin: 0 auto;
-  }
-  .rating-panel {
-    display: inline;
+    max-height: 200px;
   }
 }

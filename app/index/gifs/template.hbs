@@ -2,6 +2,7 @@
 {{#if currentlyLoading}}
 {{loading-component}}
 {{else}}
-{{giphy-minature model=model}}
+<h1 class="list-header">search results</h1>
+{{giphy-minature favorites=model}}
 {{pagination-section pagination=pagination}}
 {{/if}}

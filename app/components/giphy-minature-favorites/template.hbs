@@ -1,0 +1,14 @@
+<section class="giphy-list giphy-list-sorting">
+    <button class="sort" {{action "sortFavoritesAscending"}}>sort {{fa-icon "arrow-circle-o-up"}}</button>
+    <button class="sort" {{action "unsortFavorites"}}>sort {{fa-icon "dot-circle-o"}}</button>
+    <button class="sort" {{action "sortFavoritesDescending"}}>sort {{fa-icon "arrow-circle-o-down"}}</button>
+</section>
+<section class="giphy-list">
+    {{#each modelArray as |gif|}}
+    {{#link-to 'index.gif' gif.id class='giphy-minature-rating'}}
+        <img src={{gif.imageUrl}} alt="">
+    {{star-rating fullClassNames="fa fa-star"
+    emptyClassNames="fa fa-star-o" item=gif rating=gif.userRating on-click=(action "emptyClick")}}
+    {{/link-to}}
+    {{/each}}
+</section>

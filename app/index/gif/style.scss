@@ -1,4 +1,6 @@
 .giphy-details {
+  border: 1px solid;
+  border-radius: .4em;
   max-width: 900px;
   margin: 1em auto;
   padding: 1em;
@@ -26,6 +28,12 @@
       span {
         cursor: pointer;
       }
+    }
+    .show-button {
+      visibility: visible;
+    }
+    .hide-button {
+      visibility: hidden;
     }
   }
   .giphy-meta {

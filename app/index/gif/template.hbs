@@ -12,7 +12,7 @@
         emptyClassNames="fa fa-star-o" item=model.gif rating=userRating on-click=(action "clickStar")}} </p>
 
         <br>
-        <button {{action "removeFromFavorites"}}>remove from favorites</button>
+        <button class={{if isFavorite 'show-button' 'hide-button' }} {{action "removeFromFavorites"}}>remove from favorites</button>
     </div>
     <div>
         <img src={{model.gif.imageUrl}} alt="">

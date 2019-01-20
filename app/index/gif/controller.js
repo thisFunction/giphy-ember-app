@@ -25,6 +25,9 @@ export default Controller.extend({
       return favoriteItem.length ? favoriteItem[0].userRating : 0;
     }
   ),
+  isFavorite: computed("giphyIsFavorite.@each.id", function() {
+    return get(this, "giphyIsFavorite.0.id") !== undefined
+  }),
   actions: {
     clickStar(rating) {
       const userRating = rating.rating;
@@ -50,6 +53,7 @@ export default Controller.extend({
       }
     },
     removeFromFavorites() {
+      debugger
       const favoritesRecordId = get(this, "giphyIsFavorite.0.id");
       
       this.store.findRecord("favorite", favoritesRecordId).then(function(record) {

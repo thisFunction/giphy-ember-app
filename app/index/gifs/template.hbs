@@ -1,8 +1,8 @@
 
 {{#if currentlyLoading}}
-{{loading-component}}
+  {{loading-component}}
 {{else}}
-<h1 class="list-header">search results</h1>
-{{giphy-minature favorites=model}}
-{{pagination-section pagination=pagination}}
+  <h1 class="list-header">search results</h1>
+  {{giphy-minature favorites=model}}
+  {{pagination-section pagination=pagination}}
 {{/if}}

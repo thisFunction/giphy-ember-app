@@ -1,6 +1,6 @@
 # giphy-ember-app
 
-App uses ember.js framework, firebase and giphy api to search images and let users rate them.
+App uses ember.js framework, firebase, and giphy api [https://developers.giphy.com] to search giphy images and allow users to rate them.
 
 ## Installation
 

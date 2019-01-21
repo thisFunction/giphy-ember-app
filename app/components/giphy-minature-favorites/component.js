@@ -6,9 +6,6 @@ export default Component.extend({
   modelArray: computed("favorites", function() {
     return get(this, "favorites").toArray();
   }),
-  // modelArrayWithoutDeleted: computed('modelArray', function(){
-  //   return get(this, 'modelArray').filter(item => !item.isDeleted)
-  // }),
   favoritesSortingDescending: Object.freeze(["userRating:desc"]),
   sortedFavoritesDescending: sort("modelArray", "favoritesSortingDescending"),
   favoritesSortingAscending: Object.freeze(["userRating:asc"]),

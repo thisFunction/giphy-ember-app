@@ -7,20 +7,9 @@ module('Integration | Component | loading-component', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
-
     await render(hbs`{{loading-component}}`);
 
-    assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      {{#loading-component}}
-        template block text
-      {{/loading-component}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.equal(this.element.querySelector(".list-header").textContent.trim(), 'Search results')
+    assert.ok(this.element.querySelector("i").className.includes('fa-spin'))
   });
 });

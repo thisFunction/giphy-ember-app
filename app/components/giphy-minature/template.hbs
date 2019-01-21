@@ -1,5 +1,5 @@
 <section class="giphy-list">
-  {{#each modelArray as |gif|}}
+  {{#each searchResults as |gif|}}
     {{#link-to "index.gif" gif.id class="giphy-minature"}}
       <img src={{gif.imageUrl}} alt="">
     {{/link-to}}

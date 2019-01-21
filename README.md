@@ -19,17 +19,6 @@ App uses ember.js framework, firebase and giphy api to search images and let use
 * `ember test`
 * `ember test --server`
 
-### Linting
-
-* `npm run lint:hbs`
-* `npm run lint:js`
-* `npm run lint:js -- --fix`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
 ### Deploying
 
-App is deployed to heroku automatically from master branch.
+App is deployed to heroku automatically from master branch. [https://giphy-ember-app.herokuapp.com]

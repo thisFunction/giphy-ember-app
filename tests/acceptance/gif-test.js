@@ -1,5 +1,5 @@
 import { module, test } from 'qunit';
-import { visit, find, click, currentURL } from '@ember/test-helpers';
+import { visit, find, click } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
 
 module('Acceptance | gif', function(hooks) {

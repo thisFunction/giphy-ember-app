@@ -28,14 +28,16 @@ a {
   text-decoration: none;
 }
 
-button {
+button,
+.button {
+  display: inline-block;
   cursor: pointer;
   padding: 1em;
   font-size: 0.6em;
   line-height: 0.6em;
   background-color: #e85a4f;
   color: #eae7dc;
-  border: 3px solid;
+  border: 3px solid #e85a4f;
   border-radius: 2em;
 
   &:hover {
@@ -47,6 +49,7 @@ button {
   &:disabled {
     color: #eae7dc;
     background: gray;
+    border-color: gray;
     cursor: default;
   }
 }

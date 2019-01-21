@@ -1,7 +1,8 @@
 <section class="giphy-list">
   {{#each searchResults as |gif|}}
+  {{log gif}}
     {{#link-to "index.gif" gif.id class="giphy-minature"}}
-      <img src={{gif.imageUrl}} alt="">
+      <img src={{gif.imageUrl}} alt={{gif.title}}>
     {{/link-to}}
   {{/each}}
 </section>

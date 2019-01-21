@@ -4,11 +4,12 @@
   align-items: center;
   text-align: center;
   padding-bottom: 2em;
-
   h1 {
     margin: .5em 0 .5em;
   }
-
+  label {
+    display: none;
+  }
   input {
     text-transform: uppercase;
     padding: 0 0.5em;
@@ -23,16 +24,14 @@
     width: 80%;
   }
 }
-
 .list-header {
   margin-bottom: 0;
   font-size: 1.8em;
   text-align: center;
 }
-
 .search-button { 
   background: #17a5b0;
-
+  border-color: #17a5b0;
   &:not(:disabled):hover {
     background-color: #eae7dc;
     color: #17a5b0;

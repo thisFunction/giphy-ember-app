@@ -1,9 +1,9 @@
 <section class="giphy-search-section">
   <h1>Welcome to MyGiphy</h1>
   <form submit="searchGiphy">
-    {{input value=this.searchQuery autocomplete="off" type="text" autofocus="true"}}
-    <button class="search-button" {{action "searchGiphy"}} disabled={{submitDisabled}}>SEARCH</button>
-    <button {{action "favorites"}}>favorites</button>
+    {{input aria-label="search" name="search" value=this.searchQuery autocomplete="off" type="text" autofocus="true"}}
+    <button class="search-button" {{action "searchGiphy"}} disabled={{submitDisabled}} aria-label="search for giphy">SEARCH</button>
+    {{#link-to "index.favorites" class="button" }}favorites{{/link-to}}
   </form>
 </section>
 

@@ -41,11 +41,13 @@ export default Controller.extend({
       } else {
         const giphyUrl = get(this, "model.gif.url");
         const imageUrl = get(this, "model.gif.images.fixed_height.url");
+        const imageTitle = get(this, "model.gif.title");
         const newFavorite = this.store.createRecord("favorite", {
           userRating: userRating,
           giphyId: giphyId,
           giphyUrl: giphyUrl,
-          imageUrl: imageUrl
+          imageUrl: imageUrl,
+          title: imageTitle
         });
         newFavorite.save();
       }

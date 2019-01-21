@@ -7,9 +7,9 @@ export default DS.Model.extend({
   images: DS.attr(),
   url: DS.attr("string"),
   title: DS.attr("string"),
-  titleNoEnding: computed("title", function() {
+  titleNoGif: computed("title", function() {
     const title = this.get("title");
-    return title.slice(0, title.length - 4);
+    return title.replace(" GIF","")
   }),
   importDatetime: DS.attr('date'),
   imageUrl: computed('images', function(){

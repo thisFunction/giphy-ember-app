@@ -4,7 +4,7 @@ App uses ember.js framework, firebase and giphy api to search images and let use
 
 ## Installation
 
-* `git clone <repository-url>` this repository
+* `git clone https://github.com/thisFunction/giphy-ember-app.git`
 * `cd giphy-ember-app`
 * `npm install`
 

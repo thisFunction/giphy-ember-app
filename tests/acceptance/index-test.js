@@ -12,8 +12,8 @@ module('Acceptance | index', function(hooks) {
     assert.ok(find('.giphy-search-section input'));
     assert.ok(find('.giphy-search-section button:nth-of-type(1)'));
     assert.equal(document.querySelector('.giphy-search-section button:nth-of-type(1)').textContent.trim(), "SEARCH");
-    assert.ok(find('.giphy-search-section button:nth-of-type(2)'));
-    assert.equal(document.querySelector('.giphy-search-section button:nth-of-type(2)').textContent.trim(), "favorites");
+    assert.ok(find('.giphy-search-section a'));
+    assert.equal(document.querySelector('.giphy-search-section a').textContent.trim(), "favorites");
     assert.equal(document.querySelector('.giphy-search-section h1').textContent.trim(), "Welcome to MyGiphy");
     assert.ok(find('.list-header'));
     assert.equal(document.querySelector('.list-header').textContent.trim(), "enter search term or look at favorites");

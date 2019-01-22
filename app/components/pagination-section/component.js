@@ -1,30 +1,38 @@
 import Component from "@ember/component";
 import {inject as service} from "@ember/service";
 import {computed, get} from "@ember/object";
+import {alias} from "@ember/object/computed";
 
 export default Component.extend({
   router: service(),
-  itemsPerPage: 25,
-  offset: computed("router.currentRoute.queryParams.offset", function(){
-      return Number(get(this, "router.currentRoute.queryParams.offset"));
+  itemsPerPage: computed("pagination.count", function() {
+    return Number(get(this, "pagination.count"));
   }),
-  totalItemCount: computed("pagination.totalCount", function() {
-    return get(this, "pagination.totalCount");
+  offset: computed("router.currentRoute.queryParams.offset", function() {
+    return Number(get(this, "router.currentRoute.queryParams.offset"));
   }),
-  searchParams: computed("router.currentRoute.queryParams.q", function() {
-    return get(this, "router.currentRoute.queryParams.q");
-  }),
-  previousButtonDisabled: computed("router.currentRoute.queryParams.offset", "itemsPerPage", function() {
+  totalItemCount: alias("pagination.totalCount"),
+  searchParams: alias("router.currentRoute.queryParams.q"),
+  previousButtonDisabled: computed(
+    "router.currentRoute.queryParams.offset",
+    "itemsPerPage",
+    function() {
       let offset = get(this, "offset");
       let itemsPerPage = get(this, "itemsPerPage");
       return !(offset - itemsPerPage >= 0);
-  }),
-  nextButtonDisabled: computed("router.currentRoute.queryParams.offset", "itemsPerPage", "pagination.totalCount", function() {
-    let offset = get(this, "offset");
-    let itemsPerPage = get(this, "itemsPerPage");
-    let totalItemCount = Number(get(this, "pagination.totalCount"));
-    return offset + itemsPerPage >= totalItemCount;
-  }),
+    }
+  ),
+  nextButtonDisabled: computed(
+    "router.currentRoute.queryParams.offset",
+    "itemsPerPage",
+    "pagination.totalCount",
+    function() {
+      let offset = get(this, "offset");
+      let itemsPerPage = get(this, "itemsPerPage");
+      let totalItemCount = Number(get(this, "pagination.totalCount"));
+      return offset + itemsPerPage >= totalItemCount;
+    }
+  ),
   transitionToPage(offset) {
     let searchParams = get(this, "searchParams");
     this.get("router").transitionTo("index.gifs", {
@@ -36,7 +44,9 @@ export default Component.extend({
   },
   actions: {
     next() {
-      let nextPageOffset = Number(get(this, "router.currentRoute.queryParams.offset")) + get(this, "itemsPerPage");
+      let nextPageOffset =
+        Number(get(this, "router.currentRoute.queryParams.offset")) +
+        get(this, "itemsPerPage");
       this.transitionToPage(nextPageOffset);
     },
     previous() {

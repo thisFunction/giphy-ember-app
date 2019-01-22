@@ -21,7 +21,6 @@ export default Component.extend({
         set(this, 'modelArray', get(this, "favorites").toArray());
      },
     emptyClick() {
-      //noop
       //necessary for ember-cli-star-rating to work properly
     }
   }

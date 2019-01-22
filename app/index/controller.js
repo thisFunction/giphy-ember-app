@@ -1,17 +1,16 @@
 import Controller from "@ember/controller";
-import {computed, get} from "@ember/object";
+import {get} from "@ember/object";
+import {gt, not} from "@ember/object/computed";
 
 export default Controller.extend({
   searchQuery: "",
-  submitDisabled: computed("searchQuery", function() {
-    return this.searchQuery.length > 0 ? false : true;
-  }),
+  queryHasValue: gt("searchQuery.length", 0),
+  submitDisabled: not("queryHasValue"),
   actions: {
     searchGiphy() {
-      const searchQuery = get(this, 'searchQuery');
       this.transitionToRoute("index.gifs", {
         queryParams: {
-          q: `${searchQuery}`,
+          q: `${get(this, "searchQuery")}`,
           offset: 0
         }
       });

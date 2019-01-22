@@ -6,28 +6,22 @@ body {
   color: #e85a4f;
   font-size: 1.4em;
 }
-
 body {
   padding-bottom: 3em;
 }
-
 h1 {
   font-family: "Amatic SC", cursive;
   font-size: 2.6em;
   font-weight: 700;
 }
-
 p,
 a,
 span {
   font-size: 1em;
   font-family: "Roboto", sans-serif;
-}
-
-a {
   text-decoration: none;
-}
 
+}
 button,
 .button {
   display: inline-block;
@@ -39,13 +33,11 @@ button,
   color: #eae7dc;
   border: 3px solid #e85a4f;
   border-radius: 2em;
-
   &:hover {
     background-color: #eae7dc;
     color: #e85a4f;
     transition: background-color 100ms linear, color 100ms linear;
   }
-
   &:disabled {
     color: #eae7dc;
     background: gray;
@@ -53,12 +45,11 @@ button,
     cursor: default;
   }
 }
-
 .buttons-small {
+  margin-top: 1em;
   display: flex;
   justify-content: center;
   flex-direction: row;
-
   button {
     margin: .4em;
     padding: .3em .5em;

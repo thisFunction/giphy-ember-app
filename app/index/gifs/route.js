@@ -10,11 +10,7 @@ export default Route.extend({
     }
   },
   model(params) {
-    if (params.search === null) {
-      return this.store.query("gif", {offset: 0, q: "funny"});
-    } else {
-      return this.store.query("gif", params);
-    }
+    return this.store.query("gif", params);
   },
   actions: {
     loading(transition) {

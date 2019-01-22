@@ -10,7 +10,6 @@ export default Route.extend({
   },
   setupController(controller, model) {
     this._super(controller, model);
-    // Implement your custom setup after
     controller.set('gif', model.gif);
     controller.set('favorites', model.favorites);
   }

@@ -13,9 +13,6 @@
     transition: box-shadow 0.15ms ease-in;
   }
 }
-.sorting {
-  margin-top: 1em;
-  button {
-    width: 60px;
-  }
+.buttons-small.sorting button {
+    width: 110px;
 }

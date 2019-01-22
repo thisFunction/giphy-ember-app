@@ -1,5 +1,5 @@
 h1 {
-    padding: 0
+  padding: 0;
 }
 .giphy-list {
   margin: 0 auto;
@@ -9,12 +9,10 @@ h1 {
   flex-direction: column;
   flex-flow: row wrap;
   justify-content: center;
-
   @media (max-width: 670px) {
     padding: 1em 0.1em;
   }
 }
-
 .giphy-minature {
   display: flex;
   color: #e85a4f;
@@ -32,7 +30,6 @@ h1 {
     margin: 0 auto;
   }
 }
-
 .giphy-minature-rating {
   @extend .giphy-minature;
   position: relative;

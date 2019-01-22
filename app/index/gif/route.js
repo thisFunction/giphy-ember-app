@@ -13,6 +13,5 @@ export default Route.extend({
     // Implement your custom setup after
     controller.set('gif', model.gif);
     controller.set('favorites', model.favorites);
-
   }
 });

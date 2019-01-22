@@ -2,19 +2,19 @@
   <div class="giphy-details-content">
     <div class="detail-section">
       <span class="giphy-meta">title: </span>
-      <span>{{model.gif.titleNoGif}}</span>
+      <span>{{gif.titleNoGif}}</span>
     </div>
     <div class="detail-section">
       <span class="giphy-meta">date: </span>
-      <span>{{moment-format model.gif.importDatetime "MMMM DD, YYYY"}}</span>
+      <span>{{moment-format gif.importDatetime "MMMM DD, YYYY"}}</span>
     </div>
     <div class="detail-section">
       <span class="giphy-meta">url: </span>
-      <span><a href={{model.gif.url}}>original post</a></span>
+      <span><a href={{gif.url}}>original post</a></span>
     </div>
     <div class="detail-section">
       <span class="giphy-meta">my rating: </span>
-      {{star-rating fullClassNames="fa fa-star" emptyClassNames="fa fa-star-o" item=model.gif rating=userRating on-click=(action "clickStar")}} 
+      {{star-rating fullClassNames="fa fa-star" emptyClassNames="fa fa-star-o" item=gif rating=userRating on-click=(action "clickStar")}} 
     </div>
     <div class="detail-section-button">
       {{#if isFavorite}}
@@ -25,7 +25,7 @@
     </div>
   </div>
   <div class="giphy-detail-image"> 
-    <img src={{model.gif.imageUrl}} alt={{model.gif.title}}>
+    <img src={{gif.imageUrl}} alt={{gif.title}}>
   </div>
 </section>
 

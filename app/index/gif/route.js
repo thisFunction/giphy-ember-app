@@ -7,5 +7,12 @@ export default Route.extend({
       gif: this.store.queryRecord("gif-detail", {id: `${params.id}`}),
       favorites: this.store.findAll("favorite")
     });
+  },
+  setupController(controller, model) {
+    this._super(controller, model);
+    // Implement your custom setup after
+    controller.set('gif', model.gif);
+    controller.set('favorites', model.favorites);
+
   }
 });

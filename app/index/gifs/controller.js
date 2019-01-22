@@ -4,7 +4,6 @@ import { inject } from '@ember/service';
 
 export default Controller.extend({
   store:  inject(),
-
   q: null,  
   offset: null,
   pagination: computed('store.offset','model.query.offset', function() {

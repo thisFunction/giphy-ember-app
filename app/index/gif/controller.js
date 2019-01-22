@@ -2,25 +2,25 @@ import Controller from "@ember/controller";
 import {get, computed} from "@ember/object";
 
 export default Controller.extend({
-  currentGiphyId: computed("model.gif.id", function() {
-    return get(this, "model.gif.id");
+  currentGiphyId: computed("gif.id", function() {
+    return get(this, "gif.id");
   }),
   giphyIsFavorite: computed(
-    "model.favorites.@each.userRating",
+    "favorites.@each.userRating",
     "currentGiphyId",
     function() {
       const giphyId = get(this, "currentGiphyId");
-      return get(this, "model.favorites")
+      return get(this, "favorites")
         .toArray()
         .filter(item => item.giphyId === giphyId);
     }
   ),
   userRating: computed(
-    "model.favorites.@each.userRating",
+    "favorites.@each.userRating",
     "currentGiphyId",
     function() {
       const giphyId = get(this, "currentGiphyId");
-      const model = this.get("model.favorites").toArray();
+      const model = this.get("favorites").toArray();
       const favoriteItem = model.filter(item => item.giphyId == giphyId);
       return favoriteItem.length ? favoriteItem[0].userRating : 0;
     }
@@ -39,9 +39,9 @@ export default Controller.extend({
           record.save();
         });
       } else {
-        const giphyUrl = get(this, "model.gif.url");
-        const imageUrl = get(this, "model.gif.images.fixed_height.url");
-        const imageTitle = get(this, "model.gif.title");
+        const giphyUrl = get(this, "gif.url");
+        const imageUrl = get(this, "gif.images.fixed_height.url");
+        const imageTitle = get(this, "gif.title");
         const newFavorite = this.store.createRecord("favorite", {
           userRating: userRating,
           giphyId: giphyId,

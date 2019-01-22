@@ -17,10 +17,14 @@
       {{star-rating fullClassNames="fa fa-star" emptyClassNames="fa fa-star-o" item=model.gif rating=userRating on-click=(action "clickStar")}} 
     </div>
     <div class="detail-section-button">
-      <button class="small {{if isFavorite "show-button" "hide-button"}}" {{action "removeFromFavorites"}} aria-label="remove giphy from favorites">remove from favorites</button>
+      {{#if isFavorite}}
+        <button {{action "removeFromFavorites"}} aria-label="remove giphy from favorites">remove from favorites</button>
+      {{else}}
+        <button {{action "addToFavorites"}} aria-label="add giphy from favorites">add to favorites</button>
+      {{/if}}
     </div>
   </div>
-  <div class="giphy-detail-image">
+  <div class="giphy-detail-image"> 
     <img src={{model.gif.imageUrl}} alt={{model.gif.title}}>
   </div>
 </section>

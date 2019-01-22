@@ -59,6 +59,9 @@ export default Controller.extend({
         record.save();
       });
       this.store.unloadAll("favorites");
+    },
+    addToFavorites(){
+      this.send('clickStar', {rating:0})
     }
   }
 });

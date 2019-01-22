@@ -53,12 +53,6 @@
         cursor: pointer;
       }
     }
-    .show-button {
-      visibility: visible;
-    }
-    .hide-button {
-      visibility: hidden;
-    }
   }
   .giphy-detail-image {
     text-align: center;
@@ -93,8 +87,8 @@
   }
   .detail-section-button {
     padding: 0.6em 0;
-    .small {
-      padding-bottom: 0.6em;
+    button {
+      padding: 0.6em;
       display: block;
       margin: 0 auto;
     }

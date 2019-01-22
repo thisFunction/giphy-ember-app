@@ -1,8 +1,10 @@
 
-{{#if currentlyLoading}}
-  {{loading-component}}
-{{else}}
-  <h1 class="list-header">search results</h1>
-  {{giphy-minature searchResults=model}}
-  {{pagination-section pagination=pagination}}
-{{/if}}
+<h1 class="list-header">search results</h1>
+{{#liquid-bind model use="search-animation"}}
+  {{#if currentlyLoading}}
+    {{loading-component}}
+  {{else}}
+    {{giphy-minature searchResults=model}}
+    {{pagination-section pagination=pagination}}
+  {{/if}}
+{{/liquid-bind}}

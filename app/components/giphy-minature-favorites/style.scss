@@ -13,13 +13,9 @@
     transition: box-shadow 0.15ms ease-in;
   }
 }
-.giphy-list-sorting {
-  max-width: 400px;
-  padding-bottom: 0;
-  .small {
-    padding: 0.5em 1em;
-    border-width: 2px;
-    margin-top: 0;
-    margin: 0 .3em;
+
+.sorting {
+  button {
+    width: 60px;
   }
 }

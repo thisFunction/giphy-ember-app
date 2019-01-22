@@ -1,8 +1,9 @@
-<section class="giphy-list giphy-list-sorting">
-  <button class="small" {{action "sortFavoritesAscending"}} aria-label="sort in ascending order">sort {{fa-icon "arrow-circle-o-up"}}</button>
-  <button class="small" {{action "unsortFavorites"}} aria-label="sort in default order">sort {{fa-icon "dot-circle-o"}}</button>
-  <button class="small" {{action "sortFavoritesDescending"}} aria-label="sort in descending order">sort {{fa-icon "arrow-circle-o-down"}}</button>
+<section class="buttons-small sorting">
+  <button {{action "sortFavoritesAscending"}} aria-label="sort in ascending order">sort {{fa-icon "arrow-circle-o-up"}}</button>
+  <button {{action "unsortFavorites"}} aria-label="sort in default order">sort {{fa-icon "dot-circle-o"}}</button>
+  <button {{action "sortFavoritesDescending"}} aria-label="sort in descending order">sort {{fa-icon "arrow-circle-o-down"}}</button>
 </section>
+
 <section class="giphy-list">
   {{#each modelArray as |gif|}}
     {{#link-to "index.gif" gif.giphyId class="giphy-minature-rating"}}

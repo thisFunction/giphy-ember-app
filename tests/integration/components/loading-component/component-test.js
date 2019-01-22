@@ -8,7 +8,6 @@ module('Integration | Component | loading-component', function(hooks) {
 
   test('it renders', async function(assert) {
     await render(hbs`{{loading-component}}`);
-
     assert.equal(this.element.querySelector(".list-header").textContent.trim(), 'Search results')
     assert.ok(this.element.querySelector("i").className.includes('fa-spin'))
   });

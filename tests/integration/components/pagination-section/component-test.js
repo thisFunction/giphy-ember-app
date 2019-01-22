@@ -72,7 +72,6 @@ module("Integration | Component | pagination-section", function(hooks) {
     };
     this.set("pagination", pagination);
     await render(hbs`{{pagination-section pagination=pagination}}`);
-
     assert.ok(this.element.querySelector("button:nth-of-type(2)").hasAttribute("disabled"), "renders disabled next button");
     assert.notOk(this.element.querySelector("button:nth-of-type(1)").hasAttribute("disabled"), "renders active previous button");
   });

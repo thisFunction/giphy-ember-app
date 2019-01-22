@@ -53,3 +53,15 @@ button,
     cursor: default;
   }
 }
+
+.buttons-small {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+
+  button {
+    margin: .4em;
+    padding: .3em .5em;
+    width: 160px;
+  }
+}

@@ -40,8 +40,8 @@ module('Acceptance | index', function(hooks) {
     await visit('/');
     await fillIn('.giphy-search-section input', 'test');
     await click('.giphy-search-section button:nth-of-type(1)');
-    assert.ok(find('.pagination'));
-    assert.ok(find('.pagination .small:nth-of-type(1)'))
-    assert.ok(find('.pagination .small:nth-of-type(2)'))
+    assert.ok(find('.buttons-small'));
+    assert.ok(find('.buttons-small button:nth-of-type(1)'))
+    assert.ok(find('.buttons-small button:nth-of-type(2)'))
   });
 });

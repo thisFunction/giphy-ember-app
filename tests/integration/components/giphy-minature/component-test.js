@@ -31,15 +31,13 @@ module('Integration | Component | giphy-minature', function(hooks) {
 
   test('it renders 4 links with giphy-minautre class', async function(assert) {
     await render(hbs`{{giphy-minature searchResults=model}}`);
-
     assert.equal(this.element.querySelectorAll(".giphy-minature").length, 4, "4 giphy minature elements render");
   });
 
   test('it renders image with correct image src inside each giphy-minautre', async function(assert) {
     await render(hbs`{{giphy-minature searchResults=model}}`);
-
     const giphyMinatures = this.element.querySelectorAll(".giphy-minature");
-
+    
     assert.ok(giphyMinatures[0].firstElementChild.getAttribute("src") === model[0].imageUrl);
     assert.ok(giphyMinatures[1].firstElementChild.getAttribute("src") === model[1].imageUrl);
     assert.ok(giphyMinatures[2].firstElementChild.getAttribute("src") === model[2].imageUrl);

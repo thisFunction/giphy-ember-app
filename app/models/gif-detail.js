@@ -2,11 +2,11 @@ import DS from "ember-data";
 import {computed, get} from "@ember/object";
 
 export default DS.Model.extend({
-  type: DS.attr("string"),
   title: DS.attr("string"),
   importDatetime: DS.attr('date'),
   url: DS.attr("string"),
   images: DS.attr(),
+  type: DS.attr("string"),
   imageUrl: computed('images', function(){
     return get(this, 'images.original.url');
   }),

@@ -40,5 +40,4 @@ export default function(){
       this.use('toDown'),
       this.reverse('toUp')
     );
-
 }

@@ -1,8 +1,7 @@
 import DS from "ember-data";
-const {RESTSerializer} = DS;
 import {underscore} from "@ember/string";
 
-export default RESTSerializer.extend({
+export default DS.RESTSerializer.extend({
   modelNameFromPayloadKey(payloadKey) {
     if (payloadKey === "data") {
       return this._super(payloadKey.replace("data", "gif"));

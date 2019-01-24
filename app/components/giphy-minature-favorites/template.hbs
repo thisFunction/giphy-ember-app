@@ -7,7 +7,7 @@
 <section class="giphy-list">
   {{#each modelArray as |gif|}}
     {{#link-to "index.gif" gif.giphyId class="giphy-minature-rating"}}
-      <img src={{gif.imageUrl}} alt={{gif.title}}>
+      <img src={{gif.previewImageUrl}} alt={{gif.title}}>
       {{star-rating fullClassNames="fa fa-star"
       emptyClassNames="fa fa-star-o" item=gif rating=gif.userRating on-click=(action "emptyClick")}}
     {{/link-to}}

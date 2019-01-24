@@ -31,6 +31,7 @@ export default Controller.extend({
           giphyId: get(this, "currentGiphyId"),
           giphyUrl: get(this, "gif.url"),
           imageUrl: get(this, "gif.imageUrl"),
+          previewImageUrl: get(this, "gif.previewImageUrl"),
           title: get(this, "gif.title")
         });
         newFavorite.save();

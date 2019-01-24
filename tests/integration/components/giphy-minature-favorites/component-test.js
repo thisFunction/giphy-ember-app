@@ -7,31 +7,31 @@ const model = [
   {
     id: 1,
     userRating: 3,
-    imageUrl: "https://media1.giphy.com/media/xUOwG5aFxxcLTVCaeQ/200.gif",
+    previewImageUrl: "https://media1.giphy.com/media/xUOwG5aFxxcLTVCaeQ/200.gif",
     giphyId: "1000"
   },
   {
     id: 2,
     userRating: 1,
-    imageUrl: "https://media1.giphy.com/media/l0Iym8uibS5p0AJdC/200.gif",
+    previewImageUrl: "https://media1.giphy.com/media/l0Iym8uibS5p0AJdC/200.gif",
     giphyId: "1000"
   },
   {
     id: 3,
     userRating: 4,
-    imageUrl: "https://media1.giphy.com/media/xUOwG5aFxxcLTVCaeQ/200.gif",
+    previewImageUrl: "https://media1.giphy.com/media/xUOwG5aFxxcLTVCaeQ/200.gif",
     giphyId: "1000"
   },
   {
     id: 4,
     userRating: 5,
-    imageUrl: "https://media1.giphy.com/media/l0Iym8uibS5p0AJdC/200.gif",
+    previewImageUrl: "https://media1.giphy.com/media/l0Iym8uibS5p0AJdC/200.gif",
     giphyId: "1000"
   },
   {
     id: 5,
     userRating: 2,
-    imageUrl: "https://media1.giphy.com/media/l0Iym8uibS5p0AJdC/200.gif",
+    previewImageUrl: "https://media1.giphy.com/media/l0Iym8uibS5p0AJdC/200.gif",
     giphyId: "1000"
   }
 ];

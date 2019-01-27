@@ -14,18 +14,18 @@ export default Component.extend({
   totalItemCount: alias("pagination.totalCount"),
   searchParams: alias("router.currentRoute.queryParams.q"),
   previousButtonDisabled: computed("router.currentRoute.queryParams.offset", "itemsPerPage", function() {
-    let offset = get(this, "offset");
-    let itemsPerPage = get(this, "itemsPerPage");
+    const offset = get(this, "offset");
+    const itemsPerPage = get(this, "itemsPerPage");
     return !(offset - itemsPerPage >= 0);
   }),
   nextButtonDisabled: computed("router.currentRoute.queryParams.offset", "itemsPerPage", "pagination.totalCount", function() {
-    let offset = get(this, "offset");
-    let itemsPerPage = get(this, "itemsPerPage");
-    let totalItemCount = Number(get(this, "pagination.totalCount"));
+    const offset = get(this, "offset");
+    const itemsPerPage = get(this, "itemsPerPage");
+    const totalItemCount = Number(get(this, "pagination.totalCount"));
     return offset + itemsPerPage >= totalItemCount;
   }),
   transitionToPage(offset) {
-    let searchParams = get(this, "searchParams");
+    const searchParams = get(this, "searchParams");
     this.get("router").transitionTo("index.gifs", {
       queryParams: {
         q: `${searchParams}`,
@@ -35,15 +35,15 @@ export default Component.extend({
   },
   actions: {
     next() {
-      let nextPageOffset =
+      const nextPageOffset =
         Number(get(this, "router.currentRoute.queryParams.offset")) +
         get(this, "itemsPerPage");
       this.transitionToPage(nextPageOffset);
     },
     previous() {
-      let offset = Number(get(this, "router.currentRoute.queryParams.offset"));
-      let itemsPerPage = get(this, "itemsPerPage");
-      let previousPageOffset = offset - itemsPerPage;
+      const offset = Number(get(this, "router.currentRoute.queryParams.offset"));
+      const itemsPerPage = get(this, "itemsPerPage");
+      const previousPageOffset = offset - itemsPerPage;
       this.transitionToPage(previousPageOffset);
     }
   }

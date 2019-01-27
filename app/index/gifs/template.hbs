@@ -5,6 +5,6 @@
     {{loading-component}}
   {{else}}
     {{giphy-minature searchResults=model}}
-    {{pagination-section pagination=pagination}}
+    {{pagination-section pagination=pagination  previousPage=(action "previousPage") nextPage=(action "nextPage") }}
   {{/if}}
 {{/liquid-bind}}

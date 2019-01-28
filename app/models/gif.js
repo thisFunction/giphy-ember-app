@@ -9,11 +9,7 @@ export default DS.Model.extend({
   imageUrl: computed('images', function(){
     return get(this, 'images.original.url');
   }),
-  titleNoGif: computed("title", function() {
-    const title = this.get("title");
-    return title.replace(" GIF","")
-  }),
   previewImageUrl: computed('images', function(){
-    return get(this, 'images.preview_gif.url') ? get(this, 'images.preview_gif.url') : get(this, 'images.original.url')
+    return get(this, 'images.preview_gif.url') ? get(this, 'images.preview_gif.url') : get(this, 'imageUrl')
   }) 
 });

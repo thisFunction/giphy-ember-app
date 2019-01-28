@@ -6,12 +6,12 @@ export default Controller.extend({
   offset: null,
   itemsPerPage: 25,
   previousPageButtonIsDisabled: computed("pagination.offset", function() {
-    return Number(get(this, "pagination.offset")) === 0;
+    return get(this, "pagination.offset") === 0;
   }),
   nextPageButtonIsDisabled: computed("pagination.{offset,count,totalCount}", function() {
-    const offset = Number(get(this, "pagination.offset"));
+    const offset = get(this, "pagination.offset");
     const itemsPerPage = get(this, "itemsPerPage");
-    const totalItemCount = Number(get(this, "pagination.totalCount"));
+    const totalItemCount = get(this, "pagination.totalCount");
     return offset + itemsPerPage >= totalItemCount;
   }),
   actions: {

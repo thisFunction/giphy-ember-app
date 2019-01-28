@@ -22,7 +22,7 @@ export default Route.extend({
       this.transitionTo("index.gifs", {
         queryParams: {
           q: get(this, 'controller.q'),
-          offset: Number(get(this, 'controller.pagination.offset')) + get(this, 'controller.itemsPerPage'),
+          offset: get(this, 'controller.pagination.offset') + get(this, 'controller.itemsPerPage'),
         }
       });
     },
@@ -30,7 +30,7 @@ export default Route.extend({
       this.transitionTo("index.gifs", {
         queryParams: {
           q: get(this, 'controller.q'),
-          offset: Number(get(this, 'controller.pagination.offset')) - get(this, 'controller.itemsPerPage'),
+          offset: get(this, 'controller.pagination.offset') - get(this, 'controller.itemsPerPage'),
         }
       });
     }

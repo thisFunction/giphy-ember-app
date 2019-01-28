@@ -18,13 +18,6 @@ export default Route.extend({
     controller.set('pagination', this.get("store").peekRecord("pagination", model.query.offset));
   },
   actions: {
-    loading(transition) {
-      const controller = this.controllerFor("index.gifs");
-      controller.set("currentlyLoading", true);
-      transition.promise.finally(function() {
-        controller.set("currentlyLoading", false);
-      });
-    }, 
     transitionToNextPage() {
       this.transitionTo("index.gifs", {
         queryParams: {

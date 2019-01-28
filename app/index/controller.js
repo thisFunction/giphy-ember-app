@@ -1,10 +1,12 @@
 import Controller from "@ember/controller";
-import {get} from "@ember/object";
-import {gt, not} from "@ember/object/computed";
+import {get, computed} from "@ember/object";
+import {not} from "@ember/object/computed";
 
 export default Controller.extend({
   searchQuery: "",
-  queryHasValue: gt("searchQuery.length", 0),
+  queryHasValue: computed("searchQuery.length", function(){
+    return get(this, 'searchQuery').trim().length;
+  }),
   submitDisabled: not("queryHasValue"),
   actions: {
     searchGiphy() {

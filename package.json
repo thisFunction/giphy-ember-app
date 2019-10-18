@@ -47,7 +47,7 @@
     "ember-moment": "^7.8.0",
     "ember-qunit": "^3.4.1",
     "ember-resolver": "^5.0.1",
-    "ember-source": "~3.7.0",
+    "ember-source": "~3.13.3",
     "emberfire": "^2.0.10",
     "eslint-plugin-ember": "^5.2.0",
     "eslint-plugin-ember-suave": "^1.0.0",

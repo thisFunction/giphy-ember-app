@@ -50,7 +50,7 @@
     "ember-source": "~3.7.0",
     "emberfire": "^2.0.10",
     "eslint-plugin-ember": "^7.1.0",
-    "eslint-plugin-ember-suave": "^1.0.0",
+    "eslint-plugin-ember-suave": "^2.0.0",
     "liquid-fire": "^0.29.5",
     "loader.js": "^4.7.0",
     "qunit-dom": "^0.8.0",
